@@ -12,14 +12,44 @@ public class GraphTest {
 
     @Test
     public void createAdjacentMatrixGraph() {
-        List<List<Integer>> adjacentMatrix = new ArrayList<>(6);
-        adjacentMatrix.add(Collections.emptyList());
-        adjacentMatrix.add(List.of(0, 1, 1, 1, 1));
-        adjacentMatrix.add(List.of(1, 0, 0, 1, 0));
-        adjacentMatrix.add(List.of(1, 1, 1, 1, 1));
-        adjacentMatrix.add(List.of(1, 1, 0, 0, 0));
-        adjacentMatrix.add(List.of(1, 0, 1, 0, 0));
-        AdjacentMatrixGraph adjacentMatrixGraph = new AdjacentMatrixGraph(adjacentMatrix);
+        AdjacentMatrixGraph adjacentMatrixGraph = new AdjacentMatrixGraph(6);
+        adjacentMatrixGraph.addEdge(1, 2);
+        adjacentMatrixGraph.addEdge(1, 3);
+        adjacentMatrixGraph.addEdge(1, 4);
+        adjacentMatrixGraph.addEdge(1, 5);
+
+        adjacentMatrixGraph.addEdge(2, 1);
+        adjacentMatrixGraph.addEdge(2, 4);
+
+        adjacentMatrixGraph.addEdge(3, 1);
+        adjacentMatrixGraph.addEdge(3, 2);
+        adjacentMatrixGraph.addEdge(3, 3);
+        adjacentMatrixGraph.addEdge(3, 4);
+        adjacentMatrixGraph.addEdge(3, 5);
+
+        adjacentMatrixGraph.addEdge(4, 1);
+        adjacentMatrixGraph.addEdge(4, 2);
+
+        adjacentMatrixGraph.addEdge(5, 1);
+        adjacentMatrixGraph.addEdge(5, 3);
+
         assertEquals(adjacentMatrixGraph.getNeighborhoods(1), List.of(2, 3, 4, 5));
+    }
+
+    @Test
+    public void celebrity() {
+        AdjacentMatrixGraph adjacentMatrixGraph = new AdjacentMatrixGraph(4);
+        adjacentMatrixGraph.addEdge(1, 2);
+        adjacentMatrixGraph.addEdge(1, 3);
+        adjacentMatrixGraph.addEdge(1, 4);
+
+        adjacentMatrixGraph.addEdge(2, 3);
+        adjacentMatrixGraph.addEdge(2, 4);
+
+        adjacentMatrixGraph.addEdge(3, 1);
+        adjacentMatrixGraph.addEdge(3, 4);
+
+        // TO DO: Continuar a implementação e pensar numa estratégia para resolver
+        // o problema.
     }
 }
