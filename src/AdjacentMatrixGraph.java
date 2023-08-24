@@ -3,21 +3,17 @@ package src;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleGraph implements Graph {
+public class AdjacentMatrixGraph implements Graph {
     private final static Integer isConnected = 1;
 
     private final List<List<Integer>> adjacentMatrix;
 
-    public SimpleGraph(List<List<Integer>> adjacentMatrix) {
+    public AdjacentMatrixGraph(List<List<Integer>> adjacentMatrix) {
         this.adjacentMatrix = adjacentMatrix;
     }
 
-    public SimpleGraph() {
-        this.adjacentMatrix = new ArrayList<>();
-    }
-
-    public List<List<Integer>> getAdjacentMatrix() {
-        return adjacentMatrix;
+    public AdjacentMatrixGraph(Integer edges) {
+        this.adjacentMatrix = new ArrayList<>(edges);
     }
 
     @Override
