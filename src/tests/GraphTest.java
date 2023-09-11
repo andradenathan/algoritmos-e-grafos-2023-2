@@ -4,8 +4,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import src.AdjacentMatrixGraph;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GraphTest {
@@ -33,23 +31,9 @@ public class GraphTest {
         adjacentMatrixGraph.addEdge(5, 1);
         adjacentMatrixGraph.addEdge(5, 3);
 
-        assertEquals(adjacentMatrixGraph.getNeighborhoods(1), List.of(2, 3, 4, 5));
-    }
-
-    @Test
-    public void celebrity() {
-        AdjacentMatrixGraph adjacentMatrixGraph = new AdjacentMatrixGraph(4);
-        adjacentMatrixGraph.addEdge(1, 2);
-        adjacentMatrixGraph.addEdge(1, 3);
-        adjacentMatrixGraph.addEdge(1, 4);
-
-        adjacentMatrixGraph.addEdge(2, 3);
-        adjacentMatrixGraph.addEdge(2, 4);
-
-        adjacentMatrixGraph.addEdge(3, 1);
-        adjacentMatrixGraph.addEdge(3, 4);
-
-        // TO DO: Continuar a implementação e pensar numa estratégia para resolver
-        // o problema.
+        assertEquals(
+                adjacentMatrixGraph.getNeighborhoods(1),
+                List.of(2, 3, 4, 5)
+        );
     }
 }

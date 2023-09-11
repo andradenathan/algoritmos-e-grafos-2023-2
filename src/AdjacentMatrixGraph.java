@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,9 +14,9 @@ public class AdjacentMatrixGraph implements Graph {
     }
 
     public AdjacentMatrixGraph(Integer edges) {
-        adjacentMatrix = new ArrayList<>(edges+1);
-        for(int index = 0; index < edges+1; index++) {
-            adjacentMatrix.add(Arrays.asList(new Integer[edges+1]));
+        adjacentMatrix = new ArrayList<>();
+        for (int index = 0; index < edges+1; index++) {
+            adjacentMatrix.add(new ArrayList<>(Collections.nCopies(edges+1, 0)));
         }
     }
 
@@ -32,10 +31,15 @@ public class AdjacentMatrixGraph implements Graph {
         return neighborhoods;
     }
 
+    @Override
     public void addEdge(Integer vertexA, Integer vertexB) {
         this.adjacentMatrix.get(vertexA).set(vertexB, 1);
     }
 
+    @Override
+    public boolean isNeighborhood(Integer vertexA, Integer vertexB) {
+        return adjacentMatrix.get(vertexA).get(vertexB) == isConnected;
+    }
     @Override
     public Integer countNeighborhoods(Integer node) {
         return getNeighborhoods(node).size();
