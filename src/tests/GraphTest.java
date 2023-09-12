@@ -2,7 +2,7 @@ package src.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import src.AdjacentMatrixGraph;
+import src.graphs.AdjacentMatrixGraph;
 
 import java.util.List;
 
