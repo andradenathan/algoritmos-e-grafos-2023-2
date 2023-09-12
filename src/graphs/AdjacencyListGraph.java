@@ -37,4 +37,9 @@ public class AdjacencyListGraph implements Graph {
     public boolean isNeighborhood(Integer vertexA, Integer vertexB) {
        return this.adjacencyList.get(vertexA).contains(vertexB);
     }
+
+//    @Override
+//    public int numberOfVertices() {
+//        return this.adjacencyList.size();
+//    }
 }
