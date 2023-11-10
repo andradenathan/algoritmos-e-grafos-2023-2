@@ -2,7 +2,7 @@ package src.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import src.graphs.AdjacentMatrixGraph;
+import src.graphs.AdjacentMatrixImpl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class GraphTest {
 
     @Test
     public void createAdjacentMatrixGraph() {
-        AdjacentMatrixGraph adjacentMatrixGraph = new AdjacentMatrixGraph(6);
+        AdjacentMatrixImpl adjacentMatrixGraph = new AdjacentMatrixImpl(6);
         adjacentMatrixGraph.addEdge(1, 2);
         adjacentMatrixGraph.addEdge(1, 3);
         adjacentMatrixGraph.addEdge(1, 4);

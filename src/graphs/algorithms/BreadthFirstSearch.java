@@ -5,11 +5,12 @@ import src.graphs.Graph;
 import java.util.*;
 
 public class BreadthFirstSearch {
-    private Graph graph;
-    private Integer root = 1;
+    private final Graph graph;
+    private final Integer root;
 
     public BreadthFirstSearch(Graph graph) {
         this.graph = graph;
+        this.root = 1;
     }
 
     public BreadthFirstSearch(Graph graph, int root) {
@@ -17,7 +18,7 @@ public class BreadthFirstSearch {
         this.root = root;
     }
 
-    public void run() {
+    public List<Integer> run() {
         List<Integer> result = new ArrayList<>();
         Map<Integer, Boolean> visitedVertexMap = new HashMap<>();
         LinkedList<Integer> queue = new LinkedList<>();
@@ -34,5 +35,7 @@ public class BreadthFirstSearch {
                 }
             }
         }
+
+        return result;
     }
 }

@@ -7,6 +7,4 @@ public interface Graph {
     List<Integer> getNeighborhoods(Integer node);
     Integer countNeighborhoods(Integer node);
     boolean isNeighborhood(Integer vertexA, Integer vertexB);
-
-//    int numberOfVertices();
 }

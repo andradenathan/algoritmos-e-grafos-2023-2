@@ -15,6 +15,6 @@ public class TopSort {
     }
 
     public static void sort() {
-        //TODO: implementar DepthFirstSearch primeiro
+        // TODO: implement digraph and DFS first.
     }
 }
