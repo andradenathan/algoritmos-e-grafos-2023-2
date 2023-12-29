@@ -13,7 +13,7 @@ public class AdjacencyListImpl implements Graph {
 
     public AdjacencyListImpl(Integer edges) {
         this.adjacencyList = new ArrayList<>();
-        for (int index = 0; index < edges+1; index++) {
+        for (int index = 0; index < edges; index++) {
             adjacencyList.add(new LinkedList<>());
         }
     }
